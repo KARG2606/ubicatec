@@ -1,74 +1,102 @@
-<<<<<<< HEAD
-# Getting Started with Create React App
+# UbicaTEC — Auth Service
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Descripción
 
-## Available Scripts
+El Auth Service de UbicaTEC permite gestionar la autenticación de usuarios mediante un sistema basado en códigos de verificación enviados al correo institucional. El servicio valida correos, genera códigos temporales y devuelve un token JWT simulado para la autenticación del usuario.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Tecnologías
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* Azure API Management
+* React
+* JSON Web Token (JWT)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Endpoints
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+| Método | Ruta         | Descripción                                 |
+| ------ | ------------ | ------------------------------------------- |
+| POST   | /send-code   | Envía un código de verificación al correo   |
+| POST   | /verify-code | Verifica el código y retorna un JWT         |
+| GET    | /user        | Obtiene información del usuario autenticado |
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Flujo de autenticación
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. El usuario ingresa su correo institucional
+2. Se envía un código de verificación al correo
+3. El usuario ingresa el código recibido
+4. El sistema valida el código
+5. Se retorna un token JWT simulado
+6. El usuario queda autenticado
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## Variables de ambiente
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+El proyecto requiere las siguientes variables (NO incluir valores reales):
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* REACT_APP_AUTH_URL
+* REACT_APP_API_KEY
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Cómo probar localmente
 
-## Learn More
+1. Clonar el repositorio:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+git clone https://github.com/KARG2606/proyecto-dise-o-auth.git
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. Entrar al proyecto:
 
-### Code Splitting
+```bash
+cd proyecto-diseno
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+3. Instalar dependencias:
 
-### Analyzing the Bundle Size
+```bash
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+4. Crear archivo `.env.local` en la raíz:
 
-### Making a Progressive Web App
+```bash
+REACT_APP_AUTH_URL= https://kevinapimanagment.azure-api.net/auth/v1
+REACT_APP_API_KEY= API_KEY
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+5. Ejecutar el proyecto:
 
-### Advanced Configuration
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+6. Probar los endpoints:
 
-### Deployment
+* Desde el frontend
+* O usando Postman
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## Capturas de pantalla
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-=======
-# proyecto-dise-o-auth
->>>>>>> main
+* Azure API Management (Mock configurado)
+* Pruebas en Postman (200 OK)
+* Interfaz del frontend
+
+*(Agregar aquí las imágenes)*
+
+---
+
+## Créditos
+
+* Azure API Management
+* Postman
+* React
+* GitHub
