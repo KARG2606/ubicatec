@@ -85,13 +85,9 @@ npm start
 ---
 
 ## Capturas de pantalla
-
-* Azure API Management (Mock configurado)
-* Pruebas en Postman (200 OK)
-* Interfaz del frontend
-
-*(Agregar aquí las imágenes)*
-
+```bash
+https://github.com/KARG2606/ubicatec/blob/main/UbicaTEC_Auth_Service.pdf
+```
 ---
 
 ## Créditos
